@@ -1,7 +1,11 @@
 <h1>Kittens</h1>
 
+<% if @kittens.empty? %>
+    <p>No kittens yet...create one <%= link_to "here",new_kitten_path %>
+<% end %>
+
 <ul>
     <% @kittens.each do |kitten| %>
-        <li><%= kitten.name %></li>
+        <li><%= link_to kitten.name, kitten %> ID: #<%= kitten.id %></li>
     <% end %>
 </ul>
