@@ -7,4 +7,6 @@
     <li>Softness: <%= @kitten.softness %></li>
 </ul>
 
-<%= link_to "Edit #{@kitten.name}'s Info", edit_kitten_path %>
+<%= link_to "Edit #{@kitten.name}'s Info", edit_kitten_path %><br>
+
+<%= link_to "Delete Kitten", @kitten, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete kitten ##{@kitten.id}'s information?"}  %>
